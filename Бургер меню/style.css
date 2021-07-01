@@ -1,0 +1,80 @@
+
+
+
+@media(max-width: 767px){
+    body.lock {
+        overflow: hidden;
+    }
+
+    .menu-burger__header {
+        position: relative; /* задаем относительное позиционирование */
+        width: 40px; /* определяем размеры блока */
+        height: 37px;
+        display: block;
+        margin-right: 12px;
+        z-index: 50;
+        float: right;
+    }
+
+    .menu-burger__header span, .menu-burger__header:after, .menu-burger__header:before{
+        height: 5px;
+        width: 90%;
+        position: absolute;
+        background: #fff;
+        margin: 0 auto;
+        border-radius: 100px;
+        background-color: #000;
+    }
+
+    .menu-burger__header span{
+        top: 16px;
+    }
+
+    .menu-burger__header:after, .menu-burger__header:before{
+        content: '';
+        transition: all 0.5s ease 0s;
+    }
+
+    .menu-burger__header:after{
+        bottom: 5px;
+    }
+
+    .menu-burger__header:before{
+        top: 5px;
+    }
+
+    .header_menu {
+        overflow: auto;
+        position: fixed;
+        top: -1000%;
+        width: 100%;
+        background-color: #fff;
+        transition: all 0.5s ease 0s;
+        height: 100%;
+        padding: 100px 0px 0px 0px;
+        z-index: 5;
+        max-width: 100%;
+
+    }
+
+    .header_menu.active {
+        top: 0px;
+    }
+
+}
+
+.menu-burger__header.active span {
+opacity:0; 
+transition: 0.5s; 
+}
+.menu-burger__header.active:before {
+transform: rotate(38deg);
+top: 16px;
+transition: 0.5s;
+}
+.menu-burger__header.active:after {
+transform: rotate(-38deg);
+bottom: 16px;
+transition: 0.5s;
+
+}
